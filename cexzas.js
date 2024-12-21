@@ -60,6 +60,15 @@ module.exports = cexzas = async (cexzas, m, chatUpdate, store) => {
         }
       } 
       break 
+      case 'ytmp3': {
+        if (!text) return m.reply(`*Example: ${prefix+command} url`) 
+        try {
+          downloadMp3(text)
+        } catch (err) {
+          m.reply(`*Fitur sedang eror/offline*`)
+        }
+      } 
+      break
     }
   } catch (err) {
     console.log(util.format(err))
